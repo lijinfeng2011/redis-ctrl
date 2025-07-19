@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  redis:
+    image: redis:6.2
+    restart: always
+    container_name: redis-_UUID_
+    ports:
+      - "_PORT_:6379"
+    volumes:
+      - /data/redis/_UUID_/redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+
